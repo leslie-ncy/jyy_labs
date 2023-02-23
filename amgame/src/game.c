@@ -51,7 +51,7 @@ int main(const char *args) {
   puts("\"\n");
 
   // splash();
-  draw_rectangle(0, 0, 20, 10, 0xFFFFFF);
+  draw_my_rec();
 
   puts("Press any key to see its key code...\n");
   while (1) {
