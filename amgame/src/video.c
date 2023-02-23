@@ -22,6 +22,10 @@ static void draw_tile(int x, int y, int w, int h, uint32_t color) {
   ioe_write(AM_GPU_FBDRAW, &event);
 }
 
+void draw_rectangle(int x, int y, int w, int h, uint32_t color) {
+  draw_tile(x, y, w, h, color);
+}
+
 void splash() {
   init();
   for (int x = 0; x * SIDE <= w; x ++) {

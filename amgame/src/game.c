@@ -8,7 +8,8 @@ int main(const char *args) {
   puts(args); // make run mainargs=xxx
   puts("\"\n");
 
-  splash();
+  // splash();
+  draw_rectangle(0, 0, 20, 10, 0);
 
   puts("Press any key to see its key code...\n");
   while (1) {
