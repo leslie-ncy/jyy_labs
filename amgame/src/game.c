@@ -1,13 +1,14 @@
 #include <game.h>
 
-struct
-{
+struct {
   int x;
   int y;
   int w;
   int h;
   uint32_t color;
 } my_rec = {5,5,10,20, 0xFFFFFF};
+
+int step = 4;
 
 void draw_my_rec() {
   draw_rectangle(my_rec.x, my_rec.y, my_rec.w, my_rec.h, my_rec.color);
@@ -20,25 +21,25 @@ void erase_my_rec() {
 
 void move_up() {
   erase_my_rec();
-  my_rec.y -= 1;
+  my_rec.y -= step;
   draw_my_rec();
 }
 
 void move_down() {
   erase_my_rec();
-  my_rec.y += 1;
+  my_rec.y += step;
   draw_my_rec();
 }
 
 void move_left() {
   erase_my_rec();
-  my_rec.x -= 1;
+  my_rec.x -= step;
   draw_my_rec();
 }
 
 void move_right() {
   erase_my_rec();
-  my_rec.x += 1;
+  my_rec.x += step;
   draw_my_rec();
 }
 
