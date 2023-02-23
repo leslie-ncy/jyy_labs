@@ -67,6 +67,8 @@ int main(const char *args) {
     } else if (strcmp(key, "ESC") == 0) {
       halt(0);
     }
+    int t = 256;
+    while (--t) {}
   }
   return 0;
 }
