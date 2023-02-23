@@ -64,9 +64,7 @@ int main(const char *args) {
       move_left();
     } else if (strcmp(key, "D") == 0) {
       move_right();
-    } else if (strcmp(key, "ESC") == 0) {
-      halt(0);
-    }
+    } 
     int t = 256;
     while (--t) {}
   }
