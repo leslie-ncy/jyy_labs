@@ -25,11 +25,9 @@ void move_up() {
 }
 
 void move_down() {
-  puts("start func move/n");
   erase_my_rec();
   my_rec.y += 1;
   draw_my_rec();
-  puts("end func move/n");
 }
 
 void move_left() {
@@ -61,9 +59,7 @@ int main(const char *args) {
     if (strcmp(key, "W") == 0) {
       move_up();
     } else if (strcmp(key, "S") == 0) {
-      puts("start move/n");
       move_down();
-      puts("end move/n");
     } else if (strcmp(key, "A") == 0) {
       move_left();
     } else if (strcmp(key, "D") == 0) {
