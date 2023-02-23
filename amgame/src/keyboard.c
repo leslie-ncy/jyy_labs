@@ -13,6 +13,7 @@ const char* print_key() {
     puts("Key pressed: ");
     puts(key_names[event.keycode]);
     puts("\n");
+    return key_names[event.keycode];
   }
-  return key_names[event.keycode];
+  return NULL;
 }
