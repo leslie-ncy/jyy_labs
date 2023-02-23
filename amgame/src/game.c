@@ -65,8 +65,8 @@ int main(const char *args) {
     } else if (strcmp(key, "D") == 0) {
       move_right();
     } 
-    int t = 256;
-    while (--t) {}
+    // int t = 256;
+    // while (--t) {}
   }
   return 0;
 }
