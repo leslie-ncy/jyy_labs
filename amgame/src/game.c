@@ -14,7 +14,6 @@ int main(const char *args) {
   puts("Press any key to see its key code...\n");
   while (1) {
     const char* key = print_key();
-    if (key) puts(key);
   }
   return 0;
 }
