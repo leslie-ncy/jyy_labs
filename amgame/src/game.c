@@ -9,7 +9,7 @@ int main(const char *args) {
   puts("\"\n");
 
   // splash();
-  draw_rectangle(0, 0, 20, 10, 0);
+  draw_rectangle(0, 0, 20, 10, 0xFFFFFF);
 
   puts("Press any key to see its key code...\n");
   while (1) {
