@@ -25,9 +25,11 @@ void move_up() {
 }
 
 void move_down() {
+  puts("start move/n");
   erase_my_rec();
   my_rec.y += 1;
   draw_my_rec();
+  puts("end move/n");
 }
 
 void move_left() {
