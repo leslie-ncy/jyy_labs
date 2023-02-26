@@ -60,6 +60,7 @@ struct co *co_start(const char *name, void (*func)(void *), void *arg) {
   p_co->status = CO_NEW;
   p_co->waiter = NULL;
   
+  co_node_insert(p_co);
   return p_co;
 };
 
