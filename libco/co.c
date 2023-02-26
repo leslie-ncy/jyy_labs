@@ -109,7 +109,7 @@ void co_yield() {
       longjmp(cur_node->cur->env, 1);
     }
   }
-  assert(ret && current->status == CO_RUNNING);
+  // assert(ret && current->status == CO_RUNNING);
 }
 
 
