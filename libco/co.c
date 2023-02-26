@@ -48,6 +48,8 @@ static inline void restore_return() {
 			);
 }
 
+struct co* current = NULL;
+
 //--------------------------------
 struct co *co_start(const char *name, void (*func)(void *), void *arg) {
   struct co* p_co = (struct co*) malloc(sizeof(struct co));
@@ -78,8 +80,6 @@ void co_wait(struct co *pco) {
   free(co_node_remove());
 }
 
-struct co* current = NULL;
-
 void co_yield() {
   int ret = setjmp(current->env);
   if (ret == 0) { // 停止，跳其他函数
@@ -93,7 +93,7 @@ void co_yield() {
     assert(current);
     // switch co
     if (current->status == CO_NEW) {
-      current->status = CO_RUNNING; // set status
+      (volatile struct co* current)->status = CO_RUNNING; // set status
       // 将参数压入栈
       stack_switch_call(current->stack + STACK_SIZE, current->func, current->arg);
       // 恢复相关寄存器
