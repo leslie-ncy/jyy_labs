@@ -1,13 +1,12 @@
 #include <stdlib.h>
 #include <assert.h>
-#include <stddef.h>
 
 typedef struct CONODE {
     struct co* cur;
     struct CONODE* lhs, * rhs;
 } CoNode;
 
-static CoNode* cur_node = Null;
+static CoNode* cur_node = NULL;
 
 static void co_node_insert(struct co *coroutine) {
 	CoNode *victim = (CoNode*)malloc(sizeof(CoNode));

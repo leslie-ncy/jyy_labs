@@ -118,7 +118,7 @@ static __attribute__((constructor)) void co_constructor(void) {
   current->status = CO_RUNNING;
 }
 
-staitc __attribute__((destructor)) void co_destructor(void) {
+static __attribute__((destructor)) void co_destructor(void) {
   while (cur_node) {
     free(cur_node->cur);
     free(co_node_remove());
