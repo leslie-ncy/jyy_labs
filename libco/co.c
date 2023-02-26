@@ -93,7 +93,7 @@ void co_yield() {
     assert(current);
     // switch co
     if (current->status == CO_NEW) {
-      (volatile struct co* current)->status = CO_RUNNING; // set status
+      ((volatile struct co*) current)->status = CO_RUNNING; // set status
       // 将参数压入栈
       stack_switch_call(current->stack + STACK_SIZE, current->func, current->arg);
       // 恢复相关寄存器
