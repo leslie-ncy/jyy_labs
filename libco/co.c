@@ -48,6 +48,7 @@ static inline void restore_return() {
 			);
 }
 
+struct co* current = NULL;
 //--------------------------------
 struct co *co_start(const char *name, void (*func)(void *), void *arg) {
   struct co* p_co = (struct co*) malloc(sizeof(struct co));
@@ -77,8 +78,6 @@ void co_wait(struct co *pco) {
   free(pco);
   free(co_node_remove());
 }
-
-struct co* current = NULL;
 
 void co_yield() {
   int ret = setjmp(current->env);
